@@ -1,0 +1,54 @@
+{
+  "name": "ReactNativeTesting",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "react-native start",
+    "mocha": "BABEL_ENV=mocha mocha --require mocha-setup.js --compilers js:babel-core/register --recursive __tests__/mocha",
+    "mocha:watch": "./mocha.runner.sh",
+    "jest": "jest --coverage --coverageDirectory=output/coverage/jest"
+  },
+  "dependencies": {
+    "react": "15.4.2",
+    "react-native": "0.41.2",
+    "react-native-share": "1.0.19"
+  },
+  "devDependencies": {
+    "jest-junit":"15.0.0",
+    "jasmine-reporters": "^2.2.0",
+    "babel-core": "6.23.1",
+    "babel-jest": "19.0.0",
+    "babel-plugin-rewire": "1.0.0",
+    "babel-preset-es2015": "6.22.0",
+    "babel-preset-react-native": "1.9.1",
+    "chai": "3.5.0",
+    "enzyme": "2.7.1",
+    "jest": "19.0.2",
+    "mocha": "3.2.0",
+    "react-addons-test-utils": "15.4.2",
+    "react-dom": "15.4.2",
+    "react-native-mock": "0.3.1",
+    "react-test-renderer": "15.4.2",
+    "sinon": "1.17.7",
+    "sinon-chai": "2.8.0"
+  },
+  "jest": {
+    "preset": "react-native",
+    "testMatch": ["**/__tests__/jest/*.js?(x)"],
+    "setupTestFrameworkScriptFile": "./setup-jasmine-env.js",
+    "coverageReporters": [
+      "text",
+      "html",
+      "cobertura",
+      "lcov"
+    ],
+    "reporters": [
+      "default",
+      "jest-junit"
+    ]
+  },
+  "jest-junit": {
+    "output": "output/coverage/jest/junit.xml",
+    "usePathForSuiteName": "true"
+  }
+}
